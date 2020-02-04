@@ -1,33 +1,34 @@
 #include "sort.h"
 /**
- * counting_sort - sorts an array of integers in ascending
- * order using the Counting sort algorithm
- * @array: pointer to array
- * @size: size of the array
- **/
+ * counting_sort - sorts an array of integers in ascending order using the
+ * Counting sort algorithm
+ * @array: the array to sort
+ * @size: the size of the array to sort
+ *
+ */
 void counting_sort(int *array, size_t size)
 {
-int new, j, *count, *copy;
+int min, max, *count, *copy;
 size_t i;
 
 if (array == NULL || size < 2)
 return;
-new = array[0];
-for (i = 0; i < size; new++)
+min = array[0];
+for (i = 0; i < size; i++)
 {
-if (array[i] > new)
-new = array[i];
+if (array[i] > min)
+min = array[i];
 }
-count = calloc((new + 1), sizeof(int));
+count = calloc((min + 1), sizeof(int));
 for (i = 0; i < size; i++)
 {
 count[array[i]]++;
 }
-for (j = 1; j < new; j++)
+for (max = 1; max < min; max++)
 {
-count[j + 1] += count[j];
+count[max + 1] += count[max];
 }
-print_array(count, new + 1);
+print_array(count, min + 1);
 copy = malloc(sizeof(int) * size);
 for (i = 0; i < size; i++)
 {
