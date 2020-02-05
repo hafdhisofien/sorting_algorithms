@@ -1,12 +1,12 @@
 #include "sort.h"
 /**
- * partition - This function takes last element as pivot, places 
-   the pivot element at its correct position in sorted 
-    array, and places all smaller (smaller than pivot) 
-   to left of pivot and all greater elements to right 
-   of pivot
+ * partition - This function takes last element as pivot, places
+ * the pivot element at its correct position in sorted
+ * array, and places all smaller (smaller than pivot)
+ * to left of pivot and all greater elements to right
+ * of pivot
  * @array: array to sort
- * @lo: Index of smaller element 
+ * @lo: Index of smaller element
  * @hi: Index of highest element
  * @size: size of the array
  *
